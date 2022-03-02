@@ -63,4 +63,54 @@ const game = () => {
         winner.textContent = "It is a tie!";
         return;
       }
-     
+      //checks for rock//
+      if (playerChoice === "rock") {
+        if (computerChoice === "scissors") {
+          winner.textContent = "You won! :)";
+          pScore++;
+          updateScore();
+          return;
+        } else {
+          winner.textContent = "Computer Wins :/";
+          cScore++;
+          updateScore();
+          return;
+        }
+      }
+      //checks for paper//
+      if (playerChoice === "paper") {
+        if (computerChoice === "scissors") {
+          winner.textContent = "Computer Wins :/";
+          cScore++;
+          updateScore();
+          return;
+        } else {
+          winner.textContent = "You won! :)";
+          pScore++;
+          updateScore();
+          return;
+        }
+      }
+      //checks for scissors//
+      if (playerChoice === "scissors") {
+        if (computerChoice === "rock") {
+          winner.textContent = "Computer Wins :/";
+          cScore++;
+          updateScore();
+          return;
+        } else {
+          winner.textContent = "You won! :)";
+          pScore++;
+          updateScore();
+          return;
+        }
+      }
+    };
+  
+    //calls the inner function//
+    startGame();
+    playMatch();
+  };
+  
+  //start the game function//
+  game();
